@@ -72,6 +72,7 @@ stop.addEventListener('click', timerDestructor);
 
 function timerInitializer() {
   start.disabled = true;
+  input.disabled = true;
   timerID = setInterval(() => {
     const dateCurrent = new Date();
     const ms = selDate.getTime() - dateCurrent.getTime();
@@ -102,6 +103,7 @@ function addLeadingZero(value) {
 
 function timerDestructor() {
   start.disabled = false;
+  input.disabled = false;
   clearInterval(timerID);
   days.textContent = '00';
   hours.textContent = '00';
